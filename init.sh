@@ -8,8 +8,8 @@ echo "Requirements installed"
 brew install ollama
 echo "Ollama installed"
 
-ollama serve
-echo "Ollama running"
+nohup ollama serve &
+echo "Start server"
 
-ollama run deepseek-r1
-echo "Deepseek installed"
+ollama pull llama3.1
+echo "Llama installed"

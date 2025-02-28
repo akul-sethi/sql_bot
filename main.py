@@ -5,6 +5,10 @@ from langgraph.graph import START, END, StateGraph, MessagesState
 from langgraph.prebuilt import ToolNode, tools_condition
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_ollama import ChatOllama
+import subprocess
+import fcntl
+import signal
+import os
 
 
 SYSTEM_PROMPT = """
@@ -18,7 +22,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 llm = ChatOllama(
-    model="deepseek-r1",
+    model="llama3.1",
 )
 
 
